@@ -15,8 +15,8 @@ If n is even and greater than 20, print Not Weird
 
 public class IfElse {
     public static void main(String[] args) {
-
         Scanner sc=new Scanner(System.in);
+        
         int n=sc.nextInt();            
         String ans="";
         if(n%2==1){
@@ -29,6 +29,5 @@ public class IfElse {
             ans = "Not Weird";
         }
         System.out.println(ans);
-
     }
 }

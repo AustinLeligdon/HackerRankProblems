@@ -1,23 +1,34 @@
+import java.io.*;
 import java.util.*;
+import java.text.*;
 import java.math.*;
+import java.util.regex.*;
 
-//Operators
+/*
+Given an integer, n, perform the following conditional actions:
+
+If n is odd, print Weird
+If n is even and in the inclusive range of 2 to 5, print Not Weird
+If n is even and in the inclusive range of 6 to 20, print Weird
+If n is even and greater than 20, print Not Weird
+*/
+
+//NOTE: Same program as ../Introduction/IfElse.java
 public class Day3 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        double mealCost = scan.nextDouble(); // original meal price
-        int tipPercent = scan.nextInt(); // tip percentage
-        int taxPercent = scan.nextInt(); // tax percentage
-        scan.close();
-      
-        // Doing an int/100 will round down to 0
-        double tip = tipPercent*mealCost/100;
-        double tax = taxPercent*mealCost/100;
-      
-        // cast the result of the rounding operation to an int and save it as totalCost 
-        int totalCost = (int) Math.round(mealCost + tip + tax);
-      
-        // Print your result
-        System.out.println("The total meal cost is " + totalCost + " dollars.");
+        Scanner sc=new Scanner(System.in);
+        
+        int n=sc.nextInt();            
+        String ans="";
+        if(n%2==1){
+            ans = "Weird";
+        }else if(n>=2 && n<=5){
+            ans = "Not Weird";
+        }else if(n>=6 && n<=20){
+            ans = "Weird";
+        }else if(n>20){
+            ans = "Not Weird";
+        }
+        System.out.println(ans);
     }
 }
