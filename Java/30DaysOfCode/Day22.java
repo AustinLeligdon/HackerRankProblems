@@ -11,7 +11,7 @@ class Node{
 }
 
 class Day22{
-        public static int getHeight(Node root){
+    public static int getHeight(Node root){
         if(root == null)
             return -1;
         
