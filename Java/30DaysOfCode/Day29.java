@@ -1,24 +1,31 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class Day29 {
     public static void main(String[] args) {
+        //Initalize variables
         Scanner scan = new Scanner(System.in);
         int num = scan.nextInt();
-        int i, j, intN, intK;
-        String binaryN, binaryK;
+        int i, j, k, N, K, sum, max;
         
+        //Loop through each set of numbers
         for(i=0; i<num; i++){
-            intN = scan.nextInt();
-            intK = scan.nextInt();
+            N = scan.nextInt();
+            K = scan.nextInt();
+            max=0;
             
-            binaryN = Integer.toBinaryString(intN);
-            binaryK = Integer.toBinaryString(intK);
+            //Get the bitwise AND of each pair in the set
+            for(j=1; j < N; j++){
+                for(k=j+1; k <= N; k++){
+                    sum = k & j;
+                    //Set max if it is less than the given K value
+                    if(sum > max && sum < K)
+                        max = sum;
+                }
+            }
             
-            System.out.println(binaryN);
-            System.out.println(binaryK);
-            
-            //for(j)...
+            //Print out the max for each set
+            System.out.println(max);
         }
     }
 }
